@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   # Associations
   has_many :posts
   has_many :comments
+
+  # Validation macros
+  validates :password, presence: true,
+    confirmation: true
 end

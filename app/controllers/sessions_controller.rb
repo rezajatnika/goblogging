@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if @user
       redirect_back_or_to root_path, notice: 'Logged in!'
     else
-      redirect_to root_path, alert: 'Invalid email or password.'
+      redirect_to root_path, alert: 'Invalid email or password. Please check again.'
     end
   end
 
