@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   # Callback method for not authenticated user
   def not_authenticated
-    redirect_to login_path, alert: 'Please log in first.'
+    redirect_to login_path, notice: 'Please login to access this page.'
   end
 end

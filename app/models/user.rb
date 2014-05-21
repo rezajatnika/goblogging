@@ -20,6 +20,16 @@ class User < ActiveRecord::Base
   has_many :comments
 
   # Validation macros
+  validates :email, presence: true,
+    uniqueness: { case_sensitive: false },
+    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+
+  validates :first_name, presence: true,
+    length: { in: 3..20 }
+
+  validates :last_name, presence: true,
+    length: { in: 3..20 }
+
   validates :password, presence: true,
     confirmation: true
 end
