@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_filter :require_logout, only: [:new, :create]
+
   # GET /sessions/new
   def new
     @user = User.new
