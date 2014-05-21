@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.5'
 gem 'sqlite3'
 gem 'sorcery'
+gem 'foundation-rails'
+gem 'high_voltage'
+gem 'simple_form'
 
 # Assets
 gem 'sass-rails', '~> 4.0.2'
@@ -20,6 +23,8 @@ group :doc do
 end
 
 group :development do
-  gem 'annotate'
   gem 'quiet_assets'
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'thin'
 end

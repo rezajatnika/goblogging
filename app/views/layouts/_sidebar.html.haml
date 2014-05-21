@@ -1,0 +1,20 @@
+%h5 Categories
+%ul.side-nav
+  %li= link_to 'News', '#'
+  %li= link_to 'Code', '#'
+  %li= link_to 'Weasels', '#'
+%hr
+%h5 Meta
+%ul.side-nav
+  %li
+    %a{"data-reveal-id" => "loginModal", :href => "#"} Login
+  %li
+    %a{"data-reveal-id" => "registerModal", :href => "#"} Register
+
+
+#loginModal.reveal-modal.small{"data-reveal" => ""}
+  %h2 Login
+  = render 'sessions/form'
+
+#registerModal.reveal-modal.small{"data-reveal" => ""}
+  %h2 Register

@@ -8,12 +8,11 @@ class SessionsController < ApplicationController
 
   # POST /sessions
   def create
-    @user = login(params[:email], params[:password])
+    @user = login(params[:user][:email], params[:user][:password])
     if @user
       redirect_back_or_to root_path, notice: 'Logged in!'
     else
-      flash.now[:alert] = 'Invalid email or password.'
-      render 'new'
+      redirect_to root_path, alert: 'Invalid email or password.'
     end
   end
 

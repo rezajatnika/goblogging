@@ -1,9 +1,20 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %title GoBlog
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) + " — Go Blog" : "Go Blog"
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
     = csrf_meta_tags
   %body
-    = yield
+    = render 'layouts/header'
+    .row
+      .large-9.columns
+        = render 'layouts/message'
+        = yield
+      %aside.large-3.columns
+        = render 'layouts/sidebar'
+    .row
+      = render 'layouts/footer'
+    = javascript_include_tag "application"
