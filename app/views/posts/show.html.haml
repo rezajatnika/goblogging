@@ -1,0 +1,19 @@
+- provide(:title, @post.title)
+%article
+  %h3= @post.title
+  %h6 Written by #{@post.user.first_name} on #{@post.created_at.to_formatted_s(:short)}
+  = markdown(@post.content)
+  %br
+  .row
+  .comment
+    .row
+      .large-9.columns
+        = render 'comments/form'
+    .row
+      .large-9.columns
+        - if @post.comments.any?
+          %h5 Comments
+          = render partial: 'comments/comment', collection: @post.comments.order(created_at: :desc)
+        - else
+          %h5 No comments on this post.
+

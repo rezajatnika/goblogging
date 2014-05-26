@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   # Associations
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Validation macros
   validates :email, presence: true,

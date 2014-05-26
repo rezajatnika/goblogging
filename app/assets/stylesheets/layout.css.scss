@@ -1,0 +1,19 @@
+span.date {
+  margin-top: 0.9375em;
+  display: block;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #808080;
+  font-weight: bold;
+}
+
+pre {
+  padding: 8px;
+  font-family: 'Monaco', monospace;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+textarea#post_content {
+  font-family: monospace;
+}

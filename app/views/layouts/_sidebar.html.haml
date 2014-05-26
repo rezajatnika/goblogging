@@ -7,11 +7,12 @@
 %h5 Meta
 %ul.side-nav
   - if current_user
-    %li= link_to 'Logout', logout_url
+    %li= link_to 'New Post', new_post_path
+    %li= link_to 'Logout', logout_path
   - else
     %li
       %a{"data-reveal-id" => "loginModal", :href => "#"} Login
-    %li= link_to 'Register', register_url
+    %li= link_to 'Register', register_path
 
 
 #loginModal.reveal-modal.small{"data-reveal" => ""}

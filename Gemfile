@@ -7,6 +7,10 @@ gem 'sorcery'
 gem 'foundation-rails'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'redcarpet'
+gem 'friendly_id'
+gem 'pygments.rb'
+gem 'will_paginate'
 
 # Assets
 gem 'sass-rails', '~> 4.0.2'
@@ -22,9 +26,17 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Development
 group :development do
   gem 'quiet_assets'
   gem 'annotate'
   gem 'better_errors'
   gem 'thin'
+end
+
+# Production
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+  gem 'unicorn'
 end

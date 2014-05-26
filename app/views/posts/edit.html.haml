@@ -1,0 +1,6 @@
+- provide(:title, "Editing #{@post.title}")
+.row
+  %h3 Edit Post
+  .large-9.columns
+    = render 'form'
+%p= link_to 'Delete', post_path, method: :delete, data: { confirm: 'Are you sure?' }
