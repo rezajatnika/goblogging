@@ -1,8 +1,8 @@
-- provide(:title, @post.title)
+- provide :title, @post.title
 %article
   %h3= @post.title
   %h6 Written by #{@post.user.first_name} on #{@post.created_at.to_formatted_s(:short)}
-  = markdown(@post.content)
+  = markdown @post.content
   %br
   .row
   .comment

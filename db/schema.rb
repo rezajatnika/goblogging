@@ -52,13 +52,6 @@ ActiveRecord::Schema.define(version: 20140523025504) do
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
 
-  create_table "terms", force: true do |t|
-    t.integer  "post_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",            null: false
     t.string   "crypted_password", null: false

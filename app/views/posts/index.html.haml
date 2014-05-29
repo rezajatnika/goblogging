@@ -1,9 +1,8 @@
-- provide(:title, 'Home')
+- provide :title, 'Home'
 - @posts.order(created_at: :desc).each do |post|
   %article
     %h3= link_to post.title, post
     %h6 Written by #{post.user.first_name} on #{post.created_at.to_formatted_s(:short)}
-    = markdown(post.content)
-    - unless post == @posts.first
-      %hr
-    = will_paginate @posts
+    = markdown post.content
+    %hr
+= paginate @posts

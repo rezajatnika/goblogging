@@ -2,4 +2,4 @@
   %h5 #{comment.user.first_name}
   %span.date #{time_ago_in_words(comment.created_at)} ago
   %br
-  = markdown(comment.content)
+  = markdown comment.content

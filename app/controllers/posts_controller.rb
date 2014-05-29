@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @posts = Post.paginate(page: params[:page])
+    @posts = Post.page(params[:page]).per(5)
   end
 
   # GET /posts/new
