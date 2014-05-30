@@ -13,7 +13,7 @@
       .large-9.columns
         - if @post.comments.any?
           %h5 Comments
-          = render partial: 'comments/comment', collection: @post.comments.order(created_at: :desc)
+          = render partial: 'comments/comment', collection: @post.comments
         - else
           %h5 No comments on this post.
 

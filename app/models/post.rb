@@ -15,6 +15,8 @@
 class Post < ActiveRecord::Base
   before_create :set_post_date
 
+  default_scope -> { order(created_at: :desc) }
+
   extend FriendlyId
   friendly_id :post_date_slug, use: :slugged
 

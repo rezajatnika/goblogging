@@ -1,5 +1,5 @@
 %h5 Add Comment
-= form_for @comment do |f|
-  = f.hidden_field :post_id, as: :hidden
-  = f.text_area :content, input_html: { rows: 4 }, placeholder: 'Your comment...', required: true
-  = f.submit 'Add', class: 'button tiny'
+= simple_form_for @comment do |f|
+  = f.input :post_id, as: :hidden
+  = f.input :content, label: false, input_html: { rows: 4 }, placeholder: 'Your comment...'
+  = f.button :submit, 'Submit', class: 'button tiny'
