@@ -1,5 +1,5 @@
 .panel
-  %h5 #{comment.user.first_name}
+  %h5 #{comment.user_first_name}
   %span.date #{time_ago_in_words(comment.created_at)} ago
   %br
   = markdown comment.content

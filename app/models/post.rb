@@ -15,8 +15,6 @@
 class Post < ActiveRecord::Base
   before_create :set_post_date
 
-  default_scope -> { order(created_at: :desc) }
-
   extend FriendlyId
   friendly_id :post_date_slug, use: :slugged
 
@@ -24,6 +22,9 @@ class Post < ActiveRecord::Base
   belongs_to :user
   # has_many :categories
   has_many :comments, dependent: :destroy
+
+  # Law of Demeter
+  delegate :first_name, to: :user, prefix: true
 
   # Validation macros
   validates :title, presence: true

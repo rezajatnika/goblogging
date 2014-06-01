@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20140523025504) do
     t.datetime "updated_at"
   end
 
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -51,6 +54,7 @@ ActiveRecord::Schema.define(version: 20140523025504) do
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",            null: false

@@ -11,11 +11,13 @@
 #
 
 class Comment < ActiveRecord::Base
-  default_scope -> { order(created_at: :desc) }
 
   # Associations
   belongs_to :user
   belongs_to :post
+
+  # Law of Demeter
+  delegate :first_name, to: :user, prefix: true
 
   # Validation macros
   validates :content, presence: true

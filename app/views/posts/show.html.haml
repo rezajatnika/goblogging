@@ -1,19 +1,24 @@
 - provide :title, @post.title
 %article
   %h3= @post.title
-  %h6 Written by #{@post.user.first_name} on #{@post.created_at.to_formatted_s(:short)}
+  %h6 Written by #{@post.user_first_name} on #{@post.created_at.to_formatted_s(:short)}
   = markdown @post.content
   %br
   .row
   .comment
-    .row
-      .large-9.columns
-        = render 'comments/form'
+    - if logged_in?
+      .row
+        .large-9.columns
+          = render 'comments/form'
+    - else
+      .row
+        .large-9.columns
+          %p Please login to comment.
     .row
       .large-9.columns
         - if @post.comments.any?
           %h5 Comments
           = render partial: 'comments/comment', collection: @post.comments
         - else
-          %h5 No comments on this post.
+          %p No comments on this post.
 

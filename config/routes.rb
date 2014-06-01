@@ -9,5 +9,5 @@ Goblog::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :posts
-  resources :comments
+  resources :comments, only: [:create]
 end
