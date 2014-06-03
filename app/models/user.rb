@@ -31,5 +31,6 @@ class User < ActiveRecord::Base
     length: { in: 3..20 }
 
   validates :password, presence: true,
-    confirmation: true
+    confirmation: true,
+    on: :create
 end

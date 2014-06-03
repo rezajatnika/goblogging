@@ -3,6 +3,8 @@
   %h3= @post.title
   %h6 Written by #{@post.user_first_name} on #{@post.created_at.to_formatted_s(:short)}
   = markdown @post.content
+  - if current_user
+    %p= link_to 'Edit', edit_post_path
   %br
   .row
   .comment
@@ -13,7 +15,7 @@
     - else
       .row
         .large-9.columns
-          %p Please login to comment.
+          %p Please login to post comment.
     .row
       .large-9.columns
         - if @post.comments.any?

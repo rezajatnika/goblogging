@@ -4,5 +4,5 @@
     %h3= link_to post.title, post
     %h6 Written by #{post.user_first_name} on #{post.created_at.to_formatted_s(:short)}
     = markdown post.content
-    %hr
+    %br
 = paginate @posts

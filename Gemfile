@@ -11,6 +11,7 @@ gem 'redcarpet', '~> 3.1.2'
 gem 'friendly_id', '~> 5.0.3'
 gem 'pygments.rb', '~> 0.5.4'
 gem 'kaminari', '~> 0.15.1'
+# gem 'nokogiri', '~> 1.6.2.1'
 
 # Assets
 gem 'sass-rails', '~> 4.0.2'

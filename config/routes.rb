@@ -4,7 +4,7 @@ Goblog::Application.routes.draw do
 
   get 'register', to: 'users#new'
   get 'logout',   to: 'sessions#destroy'
-
+  get 'users/edit', to: 'users#edit'
   # Resources
   resources :sessions, only: [:new, :create, :destroy]
   resources :users

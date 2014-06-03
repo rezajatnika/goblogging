@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :show, :destroy, :update]
+  before_action :set_post, only: [:edit, :update, :show, :destroy]
   before_action :require_login, only: [:new, :create, :edit, :destroy]
 
   # GET /posts
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   # POST /posts/1
   def create
-    @user = current_user
+    # @user = current_user
     @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post, notice: 'Post created!'

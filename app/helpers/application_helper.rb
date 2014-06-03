@@ -19,4 +19,9 @@ module ApplicationHelper
     }
     find_and_preserve(Redcarpet::Markdown.new(renderer, options).render(text).html_safe)
   end
+
+  # Excerpt first paragraph
+  def teaser(post)
+    # TODO excerpt first post content paragraph
+  end
 end

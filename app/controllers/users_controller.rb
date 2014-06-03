@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :destroy, :update]
+  before_action :set_user, only: [:show, :destroy]
   before_filter :require_logout, only: [:new, :create]
 
   # GET /users/new
@@ -13,7 +13,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    @user = current_user
+  end
 
   # GET /users/1
   def show; end
@@ -30,6 +32,7 @@ class UsersController < ApplicationController
 
   # PUT /users/1
   def update
+    @user = current_user
     if @user.update(user_params)
       redirect_to @user, notice: 'Profile has been updated!'
     else
