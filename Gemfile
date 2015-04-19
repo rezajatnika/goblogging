@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Default gems
 gem 'rails', '4.0.5'
-gem 'sqlite3', '~> 1.3.9'
 gem 'sorcery', '~> 0.8.5'
 gem 'foundation-rails', '~> 5.2.2.0'
 # gem 'high_voltage', '~> 2.1.0'
@@ -34,6 +33,7 @@ group :development do
   gem 'better_errors', '~> 1.1.0'
   gem 'thin', '~> 1.6.2'
   gem 'pry-rails', '~> 0.3.2'
+  gem 'sqlite3', '~> 1.3.9'
 end
 
 # Production
